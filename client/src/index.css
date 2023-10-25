@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{
+scroll-behavior: smooth;
+
+}
+  body{
+      background: linear-gradient(to bottom right, rgb(255, 17, 17),rgba(0, 0, 0, 0.371), rgb(29, 29, 255));
+  
+  }
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #888;
+  }
+  ::selection{
+    background: rgb(0,123,255,0.3);
+  }
+
+body{
+    background-color: grey;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+input[type="text"],input[type="tel"],input[type="email"],input[type='number'],input[type="password"],textarea{
+    @apply w-full border m-3 py-2 px-3 rounded-2xl;
+    width: 94%;
+}
+button{
+    @apply bg-gray-300;
+}
+button.primary{
+    background-color: '#eb347d';
+    @apply bg-primary m-3 p-2 w-full text-white rounded-2xl;
+    width:94%;
+}
+h2{
+    font-weight: 500;
+    font-size: x-large;
+    padding-top: 10px;
+}
+#left{
+    width: 50%;
+    float: left;
+   }
+#right{
+    width:50%;
+    float: right;
+ }
+ #head{
+    width: 100%;
+    padding: 8px 10px;
+    transition: background-color 0.5s ease;
+ }
+ .head-scrolled {
+    background-color: rgba(112, 103, 232, 0.819);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+ @media screen and(max-width:  700px){
+       #head{
+        padding:30px;
+        margin: 20px;
+       } 
+}
+.header{
+    position: absolute;
+    z-index: 1;
+    top:0;
+}
+
+.profile{
+  align-items: center;
+  text-align: center;
+  padding-top: 8%;
+}
+.profile img{
+  width: 200px;
+}
+
+.mid label{
+  margin-left: -90%;
+}
+
+ 
+.button-container{
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  color: whitesmoke;
+  font-size: large;
+}
+.button-container button{
+  background-color: rgb(255, 49, 121);
+  padding: 10px 20px;
+  margin: 30px;
+  border-radius: 5px;
+}
+.button-container input{
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+
+#ubutton{
+  margin: 3px;
+  background-color: rgb(255, 49, 121);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: not-allowed;
+}
+
+.map-container{
+  align-items: center;
+  text-align: center;
+  margin: 0% 15%;
+}

@@ -1,0 +1,6 @@
+setBookingError(null);
+setEndTime('');
+setStartTime('');
+
+
+setBookingDetails(null);
