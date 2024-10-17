@@ -16,9 +16,10 @@ const jwtSecret = process.env.JWT_SECRET || 'default_jwt_secret';
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    credentials:true,
-    origin:'http://localhost:5173',
+  credentials: true,
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
 }));
+
 
 mongoose.connect(process.env.MONGO_URL);
 
