@@ -10,7 +10,8 @@ require("dotenv").config();
 const app = express();
 
 const bcryptSalt = bcrypt.genSaltSync(10);
-const jwtSecret = 'asfaldsjflasdjfoiawef';
+const jwtSecret = process.env.JWT_SECRET || 'default_jwt_secret';
+
 
 app.use(express.json());
 app.use(cookieParser());
@@ -157,3 +158,5 @@ app.post('/bookslot', async (req,res) => {
     app.listen(4000,function(){
     console.log("server is up in port 4000");
 });
+
+module.exports = app;
