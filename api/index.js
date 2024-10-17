@@ -24,10 +24,12 @@ app.use(cors({
 mongoose.connect(process.env.MONGO_URL);
 
 app.get('/api/test', (req,res) =>{
+    mongoose.connect(process.env.MONGO_URL);
     res.json('test ok');
 });
 
 app.post('/api/register', async (req,res) => {
+    mongoose.connect(process.env.MONGO_URL);
     const {name,email,password} = req.body;
     try{
         const userDoc = await User.create({
@@ -76,11 +78,11 @@ app.get('/api/profile', (req,res) =>{
   }
 });
 
-app.post('/api/logout',(req,res) => {
+app.post('/logout',(req,res) => {
     res.cookie('token','').json(true);
 });
 
-app.post('/api/searchMap',(req,res) => {
+app.post('/searchMap',(req,res) => {
     const search = req.body.inputValue; 
     const a='https://maps.google.co.uk/maps?q=';
     const b='&amp;output=embed';
@@ -89,7 +91,7 @@ app.post('/api/searchMap',(req,res) => {
     res.json(fullmod);
 });
 
-app.post('/api/bookslot', async (req,res) => {
+app.post('/bookslot', async (req,res) => {
     const {slotNumber,startTime,endTime,email} = req.body;
     const user = await User.findOne({ email });
     if(user){
